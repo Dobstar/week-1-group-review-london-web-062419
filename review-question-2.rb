@@ -2,7 +2,23 @@
 
 class Car
 
+    attr_accessor :make, :model
 
+    @@all = []
+
+def initialize(make: model:)
+    @make = make
+    @model = model
+    @@all << self
+end
+
+def self.all
+    @@all
+end 
+
+def drive
+    puts "VROOOOOOOOOOOOM!"
+end 
 
 end
 
@@ -20,7 +36,7 @@ Car.drive
 
 Car.all
 #=> [#<Car:0x00007fae28930f20>, #<Car:0x00007fae28923370>, #<Car:0x00007fae2891ae78>]
-
+self.all
 BONUS:
 
 volvo_lightning = Car.new(make: "Volvo", model: "Lightning")
